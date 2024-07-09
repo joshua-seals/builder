@@ -7,7 +7,7 @@ jobs:
     steps:
 
     - name: Checkout Code
-      uses: actions/checkout@4
+      uses: actions/checkout@v4
       
     - name: Set short git commit SHA
       id: vars
