@@ -13,11 +13,9 @@ RUN mkdir -p /autograder/source && \
     mkdir -p /autograder/results
 
 ENV BASE_IMAGE=$BASE_IMAGE
-COPY /build-wants/autograder /autograder/run_autograder
-COPY /build-wants/setup.sh /build-wants/environment.yml /build-wants/otter_config.json /build-wants/run_otter.py /build-wants/requirements.* \
-    /build-wants/files* \
-    /build-wants/tests \
-    /autograder/source
+COPY . /tmp/otter
+RUN ls -al /tmp/otter
+RUN sleep 30
 # ADD build-wants/run_autograder /autograder/run_autograder \
 #     build-wants/setup.sh build-wants/environment.yml build-wants/otter_config.json build-wants/run_otter.py build-wants/requirements.* \
 #     build-wants/files* \
